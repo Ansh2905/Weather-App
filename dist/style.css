@@ -1,0 +1,52 @@
+body{
+    background-image: url(images/ran.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Oswald', sans-serif;
+    color: white;
+    height: 100vh;
+}
+
+.user-search{
+    padding-left: 10px;
+}
+
+.search-box{
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid white;
+    width: 220px;
+    margin-bottom: 5px;
+}
+
+.search-box img{
+    height: 20px;
+    filter: invert(1);
+    -webkit-filter: invert(1);
+}
+
+#error-input{
+    color: lightcoral;
+    display: none;
+}
+
+#place-input{
+    margin-top: 10px;
+    color: white;
+    background-color: transparent;
+    border: none;
+    padding-bottom: 6px;
+    padding-right: 15px;
+    font-size: 20px;
+    display: inline-block;
+    font-family: inherit;
+}
+
+#place-input::placeholder{
+    color: white;
+}
+
+#place-input:focus{
+    outline: 0;
+}
+
