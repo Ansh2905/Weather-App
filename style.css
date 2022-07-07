@@ -4,7 +4,6 @@ body{
     background-size: cover;
     font-family: 'Oswald', sans-serif;
     color: white;
-    height: 100vh;
 }
 
 .user-search{
@@ -25,11 +24,6 @@ body{
     -webkit-filter: invert(1);
 }
 
-#error-input{
-    color: lightcoral;
-    display: none;
-}
-
 #place-input{
     margin-top: 10px;
     color: white;
@@ -40,14 +34,6 @@ body{
     font-size: 20px;
     display: inline-block;
     font-family: inherit;
-}
-
-#place-input::placeholder{
-    color: white;
-}
-
-#place-input:focus{
-    outline: 0;
 }
 
 .weather-summary{
@@ -61,6 +47,14 @@ body{
     font-size: 70px;
 }
 
+#place-input::placeholder{
+    color: white;
+}
+
+#place-input:focus{
+    outline: 0;
+}
+
 #weather-pic{
     height: 100px;
     margin-bottom: 0px;
@@ -70,8 +64,18 @@ body{
     margin-bottom: 20px;
 }
 
+.small-text{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
 #search-button:hover{
     cursor: pointer;
+}
+
+#error-input{
+    color: lightcoral;
+    display: none;
 }
 
 .temp-range{
