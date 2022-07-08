@@ -4,6 +4,7 @@ body{
     background-size: cover;
     font-family: 'Oswald', sans-serif;
     color: white;
+    height: 100vh;
 }
 
 .user-search{
