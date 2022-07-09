@@ -3,6 +3,32 @@ search_button.addEventListener("click", function(){
     getNewInputData(document.getElementById("place-input").value);
 });
 
+changeTempButton = document.getElementById("temp-changer");
+
+changeTempButton.addEventListener("click", async function(){
+    let city = document.getElementById("city-name").innerHTML;
+    let response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=c29b4a211db56e2c54591d2330d2d5cd`);
+    let required_data = await response.json();
+    let celsius_temp = required_data.main.temp - 273;
+    let celsius_min = required_data.main.temp_min - 273;
+    let celsius_max = required_data.main.temp_max - 273;
+    let feels_like = required_data.main.feels_like - 273;
+    if(changeTempButton.innerHTML[changeTempButton.innerHTML.length - 1] == "s"){
+        document.getElementById("main-temperature").innerHTML = Math.round(celsius_temp) + "&#8451;";
+        document.getElementById("min-temp").innerHTML = Math.round(celsius_min) + "&#8451;";
+        document.getElementById("max-temp").innerHTML = Math.round(celsius_max) + "&#8451;";
+        document.getElementById("main-feels-like").innerHTML = "Feels like: " + Math.round(feels_like) + "&#8451;";
+        changeTempButton.innerHTML = "Change to Fahrenheit";
+    }
+    else{
+        document.getElementById("main-temperature").innerHTML = Math.round((celsius_temp*1.8) + 32) + "&#8457;";
+        document.getElementById("min-temp").innerHTML = Math.round((celsius_min*1.8) + 32) + "&#8457;";
+        document.getElementById("max-temp").innerHTML = Math.round((celsius_max*1.8) + 32) + "&#8457;";
+        document.getElementById("main-feels-like").innerHTML = "Feels like: " + Math.round((feels_like*1.8) + 32) + "&#8457;";
+        changeTempButton.innerHTML = "Change to Celsius";
+    }
+});
+
 async function getNewInputData(new_input){
     let response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${new_input}&APPID=c29b4a211db56e2c54591d2330d2d5cd`);
     let required_data = await response.json();
