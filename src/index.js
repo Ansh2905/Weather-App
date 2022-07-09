@@ -8,6 +8,7 @@ async function getNewInputData(new_input){
     let required_data = await response.json();
     console.log(required_data);
     changeData(required_data.name, "city-name", "", "");
+    changeWeatherPic(required_data.weather[0].icon);
     console.log(required_data.weather[0].icon);
     changeData(Math.round(required_data.main.temp - 273), "main-temperature", "", "&#8451;");
     changeData(Math.round(required_data.main.feels_like - 273), "main-feels-like", "Feels like: ", "&#8451;");
@@ -19,6 +20,10 @@ async function getNewInputData(new_input){
 
 function changeData(specific_data, specific_id, pre, post){
     document.getElementById(specific_id).innerHTML = pre + specific_data + post;
+}
+
+function changeWeatherPic(weather_desc){
+    document.getElementById("weather-pic").src = "http://openweathermap.org/img/wn/" + weather_desc + "@2x.png";
 }
 
 getNewInputData("Mumbai");
