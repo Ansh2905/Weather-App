@@ -5,6 +5,12 @@ search_button.addEventListener("click", function(){
 
 changeTempButton = document.getElementById("temp-changer");
 
+window.addEventListener("keydown", function(e){
+    if(e.key == "Enter"){
+        getNewInputData(document.getElementById("place-input").value)
+    }
+});
+
 changeTempButton.addEventListener("click", async function(){
     let city = document.getElementById("city-name").innerHTML;
     let response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=c29b4a211db56e2c54591d2330d2d5cd`);
