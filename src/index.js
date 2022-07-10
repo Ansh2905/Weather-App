@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 search_button = document.getElementById("search-button");
 search_button.addEventListener("click", function(){
     getNewInputData(document.getElementById("place-input").value);
