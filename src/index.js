@@ -13,7 +13,7 @@ window.addEventListener("keydown", function(e){
 
 changeTempButton.addEventListener("click", async function(){
     let city = document.getElementById("city-name").innerHTML;
-    let response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=c29b4a211db56e2c54591d2330d2d5cd`);
+    let response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=c29b4a211db56e2c54591d2330d2d5cd`);
     let required_data = await response.json();
     let celsius_temp = required_data.main.temp - 273;
     let celsius_min = required_data.main.temp_min - 273;
