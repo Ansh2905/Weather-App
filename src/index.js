@@ -36,7 +36,7 @@ changeTempButton.addEventListener("click", async function(){
 });
 
 async function getNewInputData(new_input){
-    let response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${new_input}&APPID=c29b4a211db56e2c54591d2330d2d5cd`);
+    let response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${new_input}&APPID=c29b4a211db56e2c54591d2330d2d5cd`);
     let required_data = await response.json();
     if(required_data.cod != "200"){
         document.getElementById('error-input').style.display = "block";
@@ -61,7 +61,7 @@ function changeData(specific_data, specific_id, pre, post){
 }
 
 function changeWeatherPic(weather_desc){
-    document.getElementById("weather-pic").src = "http://openweathermap.org/img/wn/" + weather_desc + "@2x.png";
+    document.getElementById("weather-pic").src = "https://openweathermap.org/img/wn/" + weather_desc + "@2x.png";
 }
 
 getNewInputData("Mumbai");
